@@ -47,7 +47,9 @@ tree_explainer = shap.TreeExplainer(rf_model)
 
 st.title("\u2764\ufe0f CardioGuard Risk Calculator")
 st.caption(
-    "Supervised classification demo (UX25CS635A mini project) - tuned Stacking Ensemble, "
+    "Developed By Rahul Patidar"
+    "PES Ubivercity- Mtech DSAI"
+    "Supervised classification - Mini Project"
     "trained on 302 patients from the UCI Cleveland Heart Disease dataset. "
     "**Not a medical device - for educational demonstration only.**"
 )
@@ -73,11 +75,7 @@ with st.form("patient_form"):
         slope = st.selectbox("ST slope code (slope)", options=[0, 1, 2])
         thal = st.selectbox("Thalassemia code (thal)", options=[1, 2, 3])
 
-    st.caption(
-        "The exact clinical meaning of each cp / restecg / slope / thal numeric code is "
-        "inconsistently documented across public mirrors of this dataset (see the notebook's "
-        "Section 3 data-quality note); they are modelled as categorical codes."
-    )
+   
 
     submitted = st.form_submit_button("Predict Risk", type="primary")
 
@@ -108,14 +106,14 @@ if submitted:
     contributions = pd.Series(sv[0], index=feature_names_out).sort_values(key=np.abs, ascending=False).head(5)
 
     st.subheader("Top factors driving this prediction")
-    st.caption("SHAP values from the Random Forest component (see notebook Section 9)")
+    st.caption("SHAP values from the Random Forest component")
     for feat, val in contributions.items():
         direction = "\u2b06\ufe0f pushes risk UP" if val > 0 else "\u2b07\ufe0f pushes risk DOWN"
         st.write(f"**{feat}** - {direction}  (SHAP = {val:+.3f})")
 
 st.divider()
 st.caption(
-    "Model: tuned Stacking Ensemble (see notebook for full validation report, ROC curve, "
-    "confusion matrix, and hyperparameter search). Dataset: UCI Cleveland Heart Disease "
-    "(302 unique patients after de-duplication)."
+    "Model: tuned Stacking Ensemble. 
+    Dataset: UCI Cleveland Heart Disease "
+    "(302 unique patients)."
 )
