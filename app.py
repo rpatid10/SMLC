@@ -45,9 +45,9 @@ tree_explainer = shap.TreeExplainer(rf_model)
 
 st.title("\u2764\ufe0f CardioGuard Risk Calculator")
 st.caption(
-    "Developed By **Rahul Patidar**  "
-    "PES Univercity - **Mtech DSAI**  "
-    "Supervised classification - Mini Project  "
+    "Developed By **Rahul Patidar**.  "
+    "PES Univercity - **Mtech DSAI**.  "
+    "Supervised classification - Mini Project.  "
     "trained on 302 patients from the UCI Cleveland Heart Disease dataset. "
     "**Not a medical device - for educational demonstration only.**"
 )
