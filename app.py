@@ -113,7 +113,7 @@ if submitted:
 
 st.divider()
 st.caption(
-    "Model: tuned Stacking Ensemble. 
+    "Model: tuned Stacking Ensemble." 
     Dataset: UCI Cleveland Heart Disease "
     "(302 unique patients)."
 )
